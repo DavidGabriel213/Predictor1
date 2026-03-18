@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disease Risk Predictor</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>🏥 Nigerian Patient Disease Risk Predictor</h1>
+    <p>Enter patient details to predict cardiovascular disease risk</p>
+
+    <form method="POST" action="/">
+        <label>Age:</label>
+        <input type="number" name="age" placeholder="Enter age" required>
+        <br><br>
+
+        <label>Systolic BP:</label>
+        <input type="number" name="systolic" placeholder="Enter systolic BP" required>
+        <br><br>
+        <label>Diastolic BP:</label>
+        <input type="number" name="diastolic" placeholder="Enter diastolic BP" required>
+           <br><br>
+        <label>BMI:</label>
+        <input type="number" step="0.1" name="bmi" placeholder="Enter BMI" required>
+           <br><br>
+        <label>Cholesterol:</label>
+        <input type="number" name="cholesterol" placeholder="Enter cholesterol" required>
+          <br><br>
+        <label>Blood Sugar:</label>
+        <input type="number" name="blood_sugar" placeholder="Enter blood sugar" required>
+          <br><br>
+        <label>Heart Rate:</label>
+        <input type="number" name="heart_rate" placeholder="Enter heart rate" required>
+           <br><br>
+        <label>Smoking:</label>
+        <select name="smoking">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+          <br><br>
+        <label>Alcohol Consumption:</label>
+        <select name="alcohol">
+            <option value="0">No</option>
+            <option value="1">Occasionally</option>
+            <option value="2">Yes</option>
+        </select>
+          <br><br>
+        <label>Exercise Frequency:</label>
+        <select name="exercise">
+            <option value="0">Daily</option>
+            <option value="1">Never</option>
+            <option value="2">Rarely</option>
+            <option value="3">Weekly</option>
+        </select>
+        <br><br>
+        <label>Family History:</label>
+        <select name="family_history">
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+         <br>
+        <button type="submit">Predict Risk</button>
+    </form>
+
+    {% if prediction %}
+    <div class="result {{ result_class }}">
+        <h2>Result: {{ prediction }}</h2>
+    </div>
+    {% endif %}
+
+</div>
+</body>
+</html>
