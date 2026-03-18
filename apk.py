@@ -5,7 +5,7 @@ import os
 
 app = Flask(__name__)
 
-model = pickle.load(open("/storage/emulated/0/Download/DiseaseProject/model.pkl", "rb"))
+model = pickle.load(open("model.pkl", "rb"))
 
 @app.route("/", methods=["GET", "POST"])
 def index():
